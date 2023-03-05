@@ -4,15 +4,14 @@ import TodoModel from "./TodoModel";
 
 interface TodoListProps {
     todoState: Array<TodoModel>
-    addTodo(todo: TodoModel): any
-    modifyTodo(todo: TodoModel): any
+    addTodo(name: string): any
+    setTodoDone(id: number, isDone: boolean): any
 }
 
-export default function TodoList({ todoState, addTodo, modifyTodo}: TodoListProps) {
+export default function TodoList({ todoState, addTodo, setTodoDone}: TodoListProps) {
     function onInputBlur(e: any) {
         if (e.target.value !== "") {
-            //setTodoState([...todoState, {name: e.target.value, isDone: false}])
-            addTodo({name: e.target.value, isDone: false})
+            addTodo(e.target.value as string)
         }
         e.target.value = ""
     }
@@ -21,7 +20,7 @@ export default function TodoList({ todoState, addTodo, modifyTodo}: TodoListProp
         <div className='list-group todo-list'>
             {todoState.map(todo => {
                 return (
-                    <Todo todo={todo} modifyTodo={modifyTodo} key={todo.name}></Todo>
+                    <Todo todo={todo} setTodoDone={setTodoDone} key={todo.id}></Todo>
                 )
             })}
             <label className='list-group-item d-flex gap-2'>

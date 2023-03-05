@@ -3,13 +3,12 @@ import TodoModel from "./TodoModel";
 
 interface TodoProps {
     todo: TodoModel
-    modifyTodo(todo: TodoModel): any
+    setTodoDone(id: number, isDone: boolean): any
 }
 
-export default function Todo({ todo, modifyTodo }: TodoProps) {
+export default function Todo({ todo, setTodoDone }: TodoProps) {
     function onInputChange(e: any) {
-        todo.isDone = e.target.checked as boolean
-        modifyTodo(todo)
+        setTodoDone(todo.id, e.target.checked as boolean)
     }
 
     return (
