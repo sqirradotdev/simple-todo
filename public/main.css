@@ -1,0 +1,62 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.everything {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.App {
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.title p {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.todo-list {
+    margin: 20px 0;
+}
+
+input[type=text].add-todo-field {
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+}
+
+input[type=text].add-todo-field:focus {
+    /* outline: 10px; */
+    outline: none;
+    border-bottom: 2px solid #c0c0c0;
+    margin-bottom: -2px;
+}
+
+.todo-done {
+    text-decoration: line-through;
+    font-style: italic;
+    color: gray;
+}
+
+footer p {
+    color: gray;
+    font-style: italic;
+    text-align: center;
+}
