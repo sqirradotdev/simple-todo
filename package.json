@@ -2,6 +2,7 @@
   "name": "simple-todo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gedehari.github.io/simple-todo/",
   "engines": {
     "node": "18.x"
   },
