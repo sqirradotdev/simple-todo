@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Todo from './Todo';
 import TodoList from './TodoList';
 import TodoModel from './TodoModel';
 
@@ -18,7 +17,7 @@ export default function App() {
     }
 
     function setTodoDone(id: number, isDone: boolean) {
-        const idx = todoState.findIndex((value, index, obj) => value.id == id)
+        const idx = todoState.findIndex((value, index, obj) => value.id === id)
         let todo = todoState[idx]
         todo.isDone = isDone
         if (todo) {
@@ -49,6 +48,7 @@ export default function App() {
             todosParsed.map((value, index, array) => {
                 if (increment < value.id)
                     increment = value.id
+                return value
             })
             console.log("To-do local storage found.")
         }
